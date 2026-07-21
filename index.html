@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khảo Sát Mẫu Thử 🌸 Cute Survey</title>
+  <meta name="description" content="Trang web khảo sát nhận quà phong cách dễ thương với hiệu ứng mượt mà.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- SheetJS CDN (đọc file Excel ngầm) -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Floating Background Elements -->
+  <div class="bg-decorations" id="bgDecorations"></div>
+
+  <!-- Header Section -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-icon">💖</span>
+      <span class="logo-text">Cute Survey</span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- WELCOME SCREEN -->
+    <section id="welcomeScreen" class="card fade-in">
+      <div class="mascot">✨ 🐑 ✨</div>
+      <h1 class="card-title">Chào mừng bạn đến với Khảo Sát!</h1>
+      <p class="card-subtitle">Hãy nhập tên của bạn và dành ít phút trả lời vài câu hỏi nhỏ dễ thương để nhận phần quà nhé~</p>
+
+      <div class="form-group welcome-name-group">
+        <label for="userNameInput" class="welcome-name-label">🌸 Tên hoặc biệt danh của bạn:</label>
+        <input type="text" id="userNameInput" class="form-input text-center" placeholder="Nhập tên xinh xắn ở đây..." autocomplete="off" required>
+      </div>
+
+      <div class="card-actions">
+        <button id="btnStart" class="btn btn-primary btn-lg pulse">Bắt Đầu Ngay 🚀</button>
+      </div>
+    </section>
+
+    <!-- QUESTION SCREEN -->
+    <section id="questionScreen" class="card hidden">
+      <!-- Progress Bar -->
+      <div class="progress-wrapper">
+        <div class="progress-info">
+          <span id="questionCounter">Câu hỏi 1 / 5</span>
+          <span id="progressPercent">20%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressBarFill" style="width: 20%;"></div>
+        </div>
+      </div>
+
+      <!-- Question Content Wrapper (animated) -->
+      <div id="questionWrapper" class="question-wrapper">
+        <h2 id="questionText" class="question-text">Đang tải câu hỏi...</h2>
+
+        <!-- Options Container -->
+        <div id="optionsContainer" class="options-container">
+          <!-- Rendered dynamically by JS -->
+        </div>
+
+        <!-- Custom Input Area (Hidden by default, shown when 'Khác' option is selected) -->
+        <div id="customInputWrapper" class="custom-input-wrapper hidden">
+          <label for="customInput" class="custom-input-label">✏️ Nhập câu trả lời của bạn:</label>
+          <input type="text" id="customInput" class="form-input" placeholder="Viết câu trả lời xinh xắn ở đây..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Navigation Actions -->
+      <div class="card-actions space-between">
+        <button id="btnPrev" class="btn btn-secondary btn-md">⬅️ Câu Trước</button>
+        <button id="btnNext" class="btn btn-primary btn-md">Câu Tiếp ➡️</button>
+      </div>
+    </section>
+
+    <!-- RESULT / SUMMARY SCREEN -->
+    <section id="resultScreen" class="card hidden">
+      <div class="mascot">🎉 🐑 💖</div>
+      <h1 class="card-title">Hoàn Thành Khảo Sát!</h1>
+      <p class="card-subtitle">Cảm ơn bạn rất nhiều vì đã hoàn thành khảo sát xinh xắn này~</p>
+
+      <div class="summary-box">
+        <h3>📋 Tóm tắt kết quả câu trả lời:</h3>
+        <div id="summaryList" class="summary-list">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <div class="card-actions vertical-gap">
+        <button id="btnRestart" class="btn btn-secondary btn-md">🔄 Làm Lại Khảo Sát</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- GIFT & THANK YOU POPUP MODAL -->
+  <div id="giftModal" class="modal-backdrop hidden">
+    <div class="floating-hearts-overlay" id="modalHeartsOverlay"></div>
+    
+    <div class="gift-card fade-in">
+      <div class="gift-icon">🎁</div>
+      <h2 class="gift-title">Hoàn Thành Rút Thử Mẫu!</h2>
+      <p class="gift-message">
+        Chúc mừng bạn đã hoàn thành khảo sát, mời bạn ra cửa để nhận món quà có thể thưởng thức ngay vì đã bỏ ra ít phút để làm mẫu thử này.
+      </p>
+      
+      <div class="gift-actions">
+        <button id="btnCloseGiftModal" class="btn btn-primary btn-lg pulse">Nhận Quà Ngay 🎀</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

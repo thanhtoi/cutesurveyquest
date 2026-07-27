@@ -1,0 +1,70 @@
+[
+  {
+    "question": "Bạn đang cảm thấy thế nào?",
+    "options": ["Dễ chịu 🌿", "Khó chịu 🥺"]
+  },
+  {
+    "question": "Hôm nay bầu trời chỗ bạn trông thế nào?",
+    "options": ["Nắng ấm tươi tắn ☀️", "Mây trắng bồng bềnh ☁️", "Mưa nhẹ dịu mát 🌧️"]
+  },
+  {
+    "question": "Thời tiết ưa thích của bạn là gì?",
+    "options": ["Nắng ấm ☀️", "Mưa rào 🌧️", "Se lạnh 🍂"]
+  },
+  {
+    "question": "Một ngày hôm nay của bạn thế nào?",
+    "options": ["Khác (Nhập tay...)"]
+  },
+  {
+    "question": "Bạn thường thức dậy vào lúc mấy giờ?",
+    "options": ["Trước 6h sáng 🌅", "6h - 8h sáng ⏰", "Sau 8h sáng 😴"]
+  },
+  {
+    "question": "Bạn thường ngủ vào lúc mấy giờ?",
+    "options": ["10h 🕙", "11h 🕚", "12h 🕛", "Khác (Nhập tay...)"]
+  },
+  {
+    "question": "Âm thanh nào làm tâm trạng bạn thấy dễ chịu nhất?",
+    "options": ["Tiếng mưa rơi tí tách 🌧️", "Tiếng nhạc Lofi / Acoustic 🎶", "Tiếng sóng biển rì rào 🌊"]
+  },
+  {
+    "question": "Loại vật nuôi bạn yêu thích nhất?",
+    "options": ["Mèo 🐱", "Chó 🐶"]
+  },
+  {
+    "question": "Nếu được biến thành một em cún/mèo nhỏ, bạn thích làm gì nhất?",
+    "options": ["Nằm cuộn tròn sưởi nắng 🐱", "Chạy nhảy lon ton tung tăng 🐶", "Được xoa đầu chiều chuộng 🌸"]
+  },
+  {
+    "question": "Món đồ uống nào sẽ làm ngày hôm nay của bạn tuyệt hơn?",
+    "options": ["Trà sữa ngọt ngào 🧋", "Cà phê thơm lừng ☕", "Nước ép hoa quả 🍹"]
+  },
+  {
+    "question": "Bạn có thích ăn Bánh ép không?",
+    "options": ["Có 😋", "Không 😅"]
+  },
+  {
+    "question": "Món ăn vặt 'chữa lành' tâm trạng của bạn mỗi khi mệt mỏi?",
+    "options": ["Bánh ngọt / Kem 🍦", "Đồ nướng nóng hổi 🍢", "Bánh ép giòn thơm 🍪"]
+  },
+  {
+    "question": "Tối nay bạn dự định thưởng cho bản thân điều gì?",
+    "options": ["Xem một bộ phim hay 🎬", "Đi ngủ thật sớm 😴", "Nghe playlist nhạc yêu thích 🎧"]
+  },
+  {
+    "question": "Bạn đang nghĩ đến điều gì những lúc bộn bề?",
+    "options": ["Khác (Nhập tay...)"]
+  },
+  {
+    "question": "Điều nhỏ xíu nào mới làm bạn mỉm cười gần đây?",
+    "options": ["Khác (Nhập tay...)"]
+  },
+  {
+    "question": "Lúc này, bạn thích nhận điều gì nhất?",
+    "options": ["Một cái ôm ấm áp 🫂", "Một ly nước ngon lành 🧋", "Một lời khen dịu dàng 💖"]
+  },
+  {
+    "question": "Bạn đánh giá phong cách giao diện này như thế nào?",
+    "options": ["Rất dễ thương 🌸", "Tuyệt vời ✨", "Khá ổn 🌿", "Cần cải thiện 🛠️"]
+  }
+]
